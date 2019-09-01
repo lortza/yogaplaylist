@@ -34,11 +34,11 @@ group :development, :test do
   gem 'better_errors'           # creates console in browser for errors
   gem 'binding_of_caller'       # goes with better_errors
   gem 'pry-rails'               # for calling binding.pry
-
 end
 
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'rb-readline'             # resolves readline errors and allows rails con to run
   gem 'rubocop-performance'
   gem 'rubocop-rails'
   gem 'spring'
