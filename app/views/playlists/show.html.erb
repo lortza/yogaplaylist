@@ -1,0 +1,31 @@
+<%= link_to 'Edit', edit_playlist_path(@playlist), class: 'btn btn-sm btn-primary right' %> <%= link_to 'Back', playlists_path, class: 'btn btn-sm btn-primary right' %>
+
+<h1>
+  <%= @playlist.name %>
+</h1>
+
+<p><strong>Hold Time:</strong> <%= @playlist.hold_time %> seconds</p>
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th>Sequence Number</th>
+      <th>Image file</th>
+      <th>Name</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @playlist.playlist_poses.each do |playlist_pose| %>
+      <tr>
+        <td><%= playlist_pose.sequence_number %></td>
+        <td><%= link_to (image_tag playlist_pose.pose.image_file), playlist_pose.pose, class: 'thumbnail' %></td>
+        <td><%= playlist_pose.pose.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
