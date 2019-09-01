@@ -2,6 +2,8 @@
 
 <h1>
   <%= @playlist.name %>
+  <%#= link_to 'Play', '', id: 'play', class: 'btn btn-sm btn-success' %>
+  <button type="button" name="button" id="play" class="btn btn-sm btn-success">Play</button>
 </h1>
 
 <p><strong>Hold Time:</strong> <%= @playlist.hold_time %> seconds</p>
@@ -29,3 +31,34 @@
 
 <br>
 
+<script type="text/javascript">
+
+  play_tracks(<%= @playlist.hold_time %>, <%= @playlist.tracks_for_js %>);
+
+  function play_tracks(holdTimeInput, audioTracks){
+    document.addEventListener('DOMContentLoaded', function () {
+      const minholdTime = 5;
+      const holdTime = holdTimeInput === 0 ? minholdTime : holdTimeInput;
+      button = document.getElementById('play')
+      const soundPlaylistComplete = new Audio(`/audio_files/5.wav`);
+
+
+
+      button.addEventListener('click', function(e) {
+        event.preventDefault;
+
+        for(i = 0; i < audioTracks.length; i++){
+          console.log(audioTracks[i]);
+          const track = new Audio(`/audio_files/${audioTracks[i]}`);
+
+          track.play().catch(e => {
+            console.log(e);
+          });
+
+        }
+
+      });
+    });
+
+  };
+</script>
