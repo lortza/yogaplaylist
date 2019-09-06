@@ -31,34 +31,49 @@
 
 <br>
 
+<%#= javascript_tag("playTracks(#{@playlist.hold_time}, #{@playlist.tracks_for_js})") %>
+
 <script type="text/javascript">
+  playTracks(<%= @playlist.hold_time %>, <%= @playlist.tracks_for_js %>);
 
-  play_tracks(<%= @playlist.hold_time %>, <%= @playlist.tracks_for_js %>);
+  // for each audio file in array
+  //   play file
+  //   wait x seconds
+  // at end, play ending chime
 
-  function play_tracks(holdTimeInput, audioTracks){
+  function playTracks(holdTimeInput, audioTracks){
     document.addEventListener('DOMContentLoaded', function () {
-      const minholdTime = 5;
-      const holdTime = holdTimeInput === 0 ? minholdTime : holdTimeInput;
-      button = document.getElementById('play')
-      const soundPlaylistComplete = new Audio(`/audio_files/5.wav`);
+      const defaultHoldTime = 5;
+      // const soundPlaylistComplete = new Audio(`/audio_files/chime.wav`);
+      const soundPlaylistComplete = 'chime.wav';
+      audioTracks.push(soundPlaylistComplete)
+      let holdTime = holdTimeInput === 0 ? defaultHoldTime : holdTimeInput;
 
+      button = document.getElementById('play')
 
 
       button.addEventListener('click', function(e) {
         event.preventDefault;
+        console.log(`holdTime: ${holdTime}`)
 
-        for(i = 0; i < audioTracks.length; i++){
-          console.log(audioTracks[i]);
-          const track = new Audio(`/audio_files/${audioTracks[i]}`);
+        let i = 0;
 
-          track.play().catch(e => {
-            console.log(e);
-          });
+        async function playTrackAndWait () {
+          setTimeout(function () {    //  call a 3s setTimeout when the loop is called
+            console.log(`playing: ${audioTracks[i]}`);
+            const track = new Audio(`/audio_files/${audioTracks[i]}`);
 
+            track.play().catch(e => { console.log(e); });
+
+            i++;
+            if (i <= holdTime) {
+              playTrackAndWait();
+            }
+          }, holdTime * 1000)
         }
 
-      });
-    });
-
-  };
+        playTrackAndWait(); //  >:( you recursive bastard.
+      });// onclick
+    }); //DOMContentLoaded
+  };// playTracks
 </script>
