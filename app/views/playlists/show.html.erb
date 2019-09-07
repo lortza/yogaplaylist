@@ -36,47 +36,28 @@
 <script type="text/javascript">
   playTracks(<%= @playlist.hold_time %>, <%= @playlist.tracks_for_js %>);
 
-  // for each audio file in array
-  //   play file
-  //   wait x seconds
-  // at end, play ending chime
-
   function playTracks(holdTimeInput, audioTracks){
     document.addEventListener('DOMContentLoaded', function () {
-      const defaultHoldTime = 5;
-      const holdTime = holdTimeInput === 0 ? defaultHoldTime : holdTimeInput;
+      const holdTime = holdTimeInput * 1000;
 
       const soundPlaylistComplete = 'chime.wav';
-      // audioTracks.push(soundPlaylistComplete)
+      audioTracks.push(soundPlaylistComplete)
 
       const button = document.getElementById('play')
       button.addEventListener('click', function(e) {
         event.preventDefault;
-        console.log(`holdTime: ${holdTime}`)
 
-        let i = 0;
-
-        async function playTrackAndWait () {
-          setTimeout(async function () {    //  call a 3s setTimeout when the loop is called
-
-            if (i < audioTracks.length) {
-              console.log(`playing: ${audioTracks[i]}`);
-              const track = new Audio(`/audio_files/${audioTracks[i]}`);
-
+        console.log('Begin!');
+        audioTracks.forEach(function(item, index, array) {
+          setTimeout( (function( index ) {
+            return function() {
+              console.log(`playing: ${item}`);
+              const track = new Audio(`/audio_files/${item}`);
               track.play().catch(e => { console.log(e); });
-              i++;
+            };
+          }(index)), (holdTime * index) );
+        });
 
-              await playTrackAndWait();
-            } else {
-              console.log('end')
-              const track = new Audio(`/audio_files/${soundPlaylistComplete}`);
-              track.play().catch(e => { console.log(e); });
-
-            }
-          }, holdTime * 1000)
-        }
-
-        playTrackAndWait(); //  >:( you recursive bastard.
       });// onclick
     }); //DOMContentLoaded
   };// playTracks
