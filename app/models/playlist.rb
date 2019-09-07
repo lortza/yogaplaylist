@@ -9,7 +9,7 @@ class Playlist < ApplicationRecord
   validates :name,
             presence: true
 
-  validates :hold_time, 
+  validates :hold_time,
             presence: true,
             numericality: { greater_than: 0 }
 
