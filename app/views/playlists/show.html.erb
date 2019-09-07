@@ -47,7 +47,7 @@
       const holdTime = holdTimeInput === 0 ? defaultHoldTime : holdTimeInput;
 
       const soundPlaylistComplete = 'chime.wav';
-      audioTracks.push(soundPlaylistComplete)
+      // audioTracks.push(soundPlaylistComplete)
 
       const button = document.getElementById('play')
       button.addEventListener('click', function(e) {
@@ -57,15 +57,21 @@
         let i = 0;
 
         async function playTrackAndWait () {
-          setTimeout(function () {    //  call a 3s setTimeout when the loop is called
-            console.log(`playing: ${audioTracks[i]}`);
-            const track = new Audio(`/audio_files/${audioTracks[i]}`);
-
-            track.play().catch(e => { console.log(e); });
-            i++;
+          setTimeout(async function () {    //  call a 3s setTimeout when the loop is called
 
             if (i < audioTracks.length) {
-              playTrackAndWait();
+              console.log(`playing: ${audioTracks[i]}`);
+              const track = new Audio(`/audio_files/${audioTracks[i]}`);
+
+              track.play().catch(e => { console.log(e); });
+              i++;
+
+              await playTrackAndWait();
+            } else {
+              console.log('end')
+              const track = new Audio(`/audio_files/${soundPlaylistComplete}`);
+              track.play().catch(e => { console.log(e); });
+
             }
           }, holdTime * 1000)
         }
