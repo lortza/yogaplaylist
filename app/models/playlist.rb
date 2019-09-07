@@ -6,10 +6,10 @@ class Playlist < ApplicationRecord
                                 reject_if: :all_blank, # at least 1 ingredient should be present
                                 allow_destroy: true # allows user to delete ingredient via checkbox
 
-  validates :name,
-            presence: true
+  # validates :name,
+  #           presence: true
 
-  validates :hold_time, 
+  validates :hold_time,
             presence: true,
             numericality: { greater_than: 0 }
 
