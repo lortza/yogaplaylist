@@ -37,9 +37,7 @@ class PosesController < ApplicationController
 
   def destroy
     @pose.destroy
-    respond_to do |format|
-      redirect_to poses_url, notice: 'Pose was successfully destroyed.'
-    end
+    redirect_to poses_url, notice: 'Pose was successfully destroyed.'
   end
 
   private
