@@ -2,8 +2,8 @@
 
 <h1>
   <%= @playlist.name %>
-  <%#= link_to 'Play', '', id: 'play', class: 'btn btn-sm btn-success' %>
-  <button type="button" name="button" id="play" class="btn btn-sm btn-success">Play</button>
+  <%= link_to 'Play', '', id: 'button-play', class: 'btn btn-sm btn-success' %>
+  <%#= link_to 'Stop', "", class: 'btn btn-sm btn-danger' %>
 </h1>
 
 <p><strong>Hold Time:</strong> <%= @playlist.hold_time %> seconds</p>
@@ -37,13 +37,13 @@
   playTracks(<%= @playlist.hold_time %>, <%= @playlist.tracks_for_js %>);
 
   function playTracks(holdTimeInput, audioTracks){
-    document.addEventListener('DOMContentLoaded', function () {
+    // document.addEventListener('DOMContentLoaded', function () {
       const holdTime = holdTimeInput * 1000;
 
       const soundPlaylistComplete = 'chime.wav';
       audioTracks.push(soundPlaylistComplete)
 
-      const button = document.getElementById('play')
+      const button = document.getElementById('button-play')
       button.addEventListener('click', function(e) {
         event.preventDefault;
 
@@ -59,6 +59,6 @@
         });
 
       });// onclick
-    }); //DOMContentLoaded
+    // }); //DOMContentLoaded
   };// playTracks
 </script>
