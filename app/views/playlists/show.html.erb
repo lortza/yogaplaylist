@@ -31,34 +31,34 @@
 
 <br>
 
+<%#= javascript_tag("playTracks(#{@playlist.hold_time}, #{@playlist.tracks_for_js})") %>
+
 <script type="text/javascript">
+  playTracks(<%= @playlist.hold_time %>, <%= @playlist.tracks_for_js %>);
 
-  play_tracks(<%= @playlist.hold_time %>, <%= @playlist.tracks_for_js %>);
-
-  function play_tracks(holdTimeInput, audioTracks){
+  function playTracks(holdTimeInput, audioTracks){
     document.addEventListener('DOMContentLoaded', function () {
-      const minholdTime = 5;
-      const holdTime = holdTimeInput === 0 ? minholdTime : holdTimeInput;
-      button = document.getElementById('play')
-      const soundPlaylistComplete = new Audio(`/audio_files/5.wav`);
+      const holdTime = holdTimeInput * 1000;
 
+      const soundPlaylistComplete = 'chime.wav';
+      audioTracks.push(soundPlaylistComplete)
 
-
+      const button = document.getElementById('play')
       button.addEventListener('click', function(e) {
         event.preventDefault;
 
-        for(i = 0; i < audioTracks.length; i++){
-          console.log(audioTracks[i]);
-          const track = new Audio(`/audio_files/${audioTracks[i]}`);
+        console.log('Begin!');
+        audioTracks.forEach(function(item, index, array) {
+          setTimeout( (function( index ) {
+            return function() {
+              console.log(`playing: ${item}`);
+              const track = new Audio(`/audio_files/${item}`);
+              track.play().catch(e => { console.log(e); });
+            };
+          }(index)), (holdTime * index) );
+        });
 
-          track.play().catch(e => {
-            console.log(e);
-          });
-
-        }
-
-      });
-    });
-
-  };
+      });// onclick
+    }); //DOMContentLoaded
+  };// playTracks
 </script>

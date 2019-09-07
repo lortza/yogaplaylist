@@ -47,11 +47,14 @@ group :development do
 end
 
 group :test do
+  gem 'database_cleaner'        # clears out test db
   gem 'factory_bot_rails'       # factory support for rspec
   gem 'launchy'                 # open browser with save_and_open_page
+  gem 'rspec-rails', '~> 3.5'
   gem 'shoulda-matchers'        # library for easier testing syntax
   gem 'webdrivers'              # to help with testing
 end
+
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
