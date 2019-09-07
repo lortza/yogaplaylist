@@ -34,6 +34,10 @@ group :development, :test do
   gem 'better_errors'           # creates console in browser for errors
   gem 'binding_of_caller'       # goes with better_errors
   gem 'pry-rails'               # for calling binding.pry
+  gem 'reek'                    # https://github.com/troessner/reek/blob/master/docs/Code-Smells.md
+  gem 'rubocop-performance'     # rubocop gem helper
+  gem 'rubocop-rails'           # ruby linter
+  gem 'scss_lint', require: false # css linter
 end
 
 group :development do
