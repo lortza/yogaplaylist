@@ -13,6 +13,7 @@ AllCops:
     - 'config/**/*'
     - 'db/**/*'
     - 'script/**/*'
+    - 'node_modules/**/*'
     - 'spec/rails_helper.rb'
     - 'spec/spec_helper.rb'
     - 'lib/tasks/**/*'
@@ -34,8 +35,8 @@ Style/BlockDelimiters:
   Exclude:
     - !ruby/regexp /.*_spec\.rb$/
 
-Style/ClassAndModuleChildren:
-  EnforcedStyle: compact
+# Style/ClassAndModuleChildren:
+#   EnforcedStyle: compact
 Style/EmptyMethod:
   EnforcedStyle: expanded
 Style/TrailingCommaInArrayLiteral:

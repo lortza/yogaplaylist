@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreatePlaylistPoses < ActiveRecord::Migration[6.0]
   def change
     create_table :playlist_poses do |t|

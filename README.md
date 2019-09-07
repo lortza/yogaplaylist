@@ -10,3 +10,29 @@ yogaplaylist is a personal practice app that builds yoga post playlists with a v
 * Postgres
 
 Temporary files from: https://freesound.org/people/margo_heston/packs/12534/
+
+
+## Getting Started
+
+* Fork & Clone
+* Bundle
+* `rake db:setup`
+* `rake db:seed`
+* run RuboCop: `rubocop`
+* run tests: `bundle exec rspec`
+
+
+### Linters
+This project uses these linters in CI:
+* [reek](https://github.com/troessner/reek)
+* [rubocop](https://github.com/rubocop-hq/rubocop)
+* [scss-lint](https://github.com/sds/scss-lint)
+
+Run them locally on your machine like this:
+```
+bundle exec reek
+
+bundle exec rubocop
+
+bundle exec scss-lint app/assets/stylesheets/**.scss
+```
