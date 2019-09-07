@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PlaylistPosesController < ApplicationController
   before_action :set_playlist_pose, only: [:show, :edit, :update, :destroy]
 

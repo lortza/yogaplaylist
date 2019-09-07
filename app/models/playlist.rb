@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Playlist < ApplicationRecord
   has_many :playlist_poses
   has_many :poses, through: :playlist_poses
