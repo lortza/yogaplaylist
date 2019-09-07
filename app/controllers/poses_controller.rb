@@ -20,34 +20,25 @@ class PosesController < ApplicationController
   def create
     @pose = Pose.new(pose_params)
 
-    respond_to do |format|
-      if @pose.save
-        format.html { redirect_to @pose, notice: 'Pose was successfully created.' }
-        format.json { render :show, status: :created, location: @pose }
-      else
-        format.html { render :new }
-        format.json { render json: @pose.errors, status: :unprocessable_entity }
-      end
+    if @pose.save
+      redirect_to @pose, notice: 'Pose was successfully created.'
+    else
+      render :new
     end
   end
 
   def update
-    respond_to do |format|
-      if @pose.update(pose_params)
-        format.html { redirect_to @pose, notice: 'Pose was successfully updated.' }
-        format.json { render :show, status: :ok, location: @pose }
-      else
-        format.html { render :edit }
-        format.json { render json: @pose.errors, status: :unprocessable_entity }
-      end
+    if @pose.update(pose_params)
+      redirect_to @pose, notice: 'Pose was successfully updated.'
+    else
+      render :edit
     end
   end
 
   def destroy
     @pose.destroy
     respond_to do |format|
-      format.html { redirect_to poses_url, notice: 'Pose was successfully destroyed.' }
-      format.json { head :no_content }
+      redirect_to poses_url, notice: 'Pose was successfully destroyed.'
     end
   end
 

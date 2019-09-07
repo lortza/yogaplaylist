@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Playlist < ApplicationRecord
-  has_many :playlist_poses
+  has_many :playlist_poses, dependent: :destroy
   has_many :poses, through: :playlist_poses
 
   accepts_nested_attributes_for :playlist_poses,
@@ -15,8 +15,7 @@ class Playlist < ApplicationRecord
             presence: true,
             numericality: { greater_than: 0 }
 
-
   def tracks_for_js
-    playlist_poses.order(:sequence_number).map { |pl_pose| pl_pose.audio_file }.to_json.html_safe
+    playlist_poses.order(:sequence_number).map(&:audio_file).to_json.html_safe # rubocop:disable Rails/OutputSafety
   end
 end
