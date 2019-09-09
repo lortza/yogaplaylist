@@ -38,7 +38,8 @@
 
   function playTracks(holdTimeInput, audioTracks){
     // document.addEventListener('DOMContentLoaded', function () {
-      const holdTime = holdTimeInput * 1000;
+      const trackSpeakTimeBuffer = 2;
+      const holdTime = (holdTimeInput + trackSpeakTimeBuffer) * 1000;
 
       const soundPlaylistComplete = 'chime.wav';
       audioTracks.push(soundPlaylistComplete)
