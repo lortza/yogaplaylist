@@ -4,7 +4,7 @@ class PlaylistsController < ApplicationController
   before_action :set_playlist, only: %i[show edit update destroy]
 
   def index
-    @playlists = Playlist.all
+    @playlists = Playlist.order(:name)
   end
 
   def show
