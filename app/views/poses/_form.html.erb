@@ -1,15 +1,5 @@
 <%= form_with(model: pose, local: true) do |form| %>
-  <% if pose.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(pose.errors.count, "error") %> prohibited this pose from being saved:</h2>
-
-      <ul>
-        <% pose.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render 'shared/errors', object: pose %>
 
   <div class="field">
     <%= form.label :name %>
