@@ -32,9 +32,9 @@ playlist.playlist_poses.create!([
 puts 'Create Yoga Poses'
 begin_at_head_of_yoga_mat = Pose.create!(name: 'begin_at_head_of_yoga_mat.m4a', audio_file: 'begin_at_head_of_yoga_mat.m4a', image_file: 'standing_straight.png')
 tree = Pose.create!(name: 'tree.m4a', audio_file: 'tree.m4a', image_file: 'tree')
-dive_down_to_standing_fwd_bend = Pose.create!(name: 'dive_down_to_standing_fwd_bend.m4a', audio_file: 'dive_down_to_standing_fwd_bend.m4a', image_file: 'standing_forward_bend.png')
+dive_down_to_standing_fwd_bend = Pose.create!(name: 'dive_down_to_standing_fwd_bend', audio_file: 'dive_down_to_standing_fwd_bend.m4a', image_file: 'standing_forward_bend.png')
 raise_up_to_flat_back = Pose.create!(name: 'raise_up_to_flat_back.m4a', audio_file: 'raise_up_to_flat_back.m4a', image_file: 'flat_back.png')
-back_down_to_standing_fwd_bend = Pose.create!(name: 'back_down_to_standing_fwd_bend.m4a', audio_file: 'back_down_to_standing_fwd_bend.m4a', image_file: 'standing_forward_bend.png')
+back_down_to_standing_fwd_bend = Pose.create!(name: 'back_down_to_standing_fwd_bend', audio_file: 'back_down_to_standing_fwd_bend.m4a', image_file: 'standing_forward_bend.png')
 jump_back_to_plank = Pose.create!(name: 'jump_back_to_plank.m4a', audio_file: 'jump_back_to_plank.m4a', image_file: 'plank.png')
 slowly_lower_to_chaturanga = Pose.create!(name: 'slowly_lower_to_chaturanga', audio_file: 'slowly_lower_to_chaturanga.m4a', image_file: 'chaturanga.png')
 down_to_floor_up_to_cobra = Pose.create!(name: 'down_to_floor_up_to_cobra', audio_file: 'down_to_floor_up_to_cobra.m4a', image_file: 'cobra.png')
