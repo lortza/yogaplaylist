@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
   root 'playlists#index'
+  devise_for :users
   resources :playlist_poses
   resources :playlists
   resources :poses
