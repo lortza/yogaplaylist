@@ -1,0 +1,13 @@
+<li class='nav-item'><%= link_to 'Playlists', playlists_path, class: 'nav-link' %></li>
+<li class='nav-item'><%= link_to 'Poses', poses_path, class: 'nav-link' %></li>
+
+
+<li class='nav-item dropdown'>
+  <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+      <%= current_user.email %>
+  </a>
+  <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
+    <%= link_to 'Edit My Profile', edit_user_registration_path, class: 'dropdown-item' %>
+    <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+  </div>
+</li>

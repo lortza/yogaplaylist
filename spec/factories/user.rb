@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :playlist do
-    user_id { create(:user).id }
-    sequence(:name) { |n| "pose#{n}" }
-    hold_time { rand(5..10) }
+  factory :user do
+    sequence(:email) { |n| "user#{n}@test.com" }
+    password { 'password' }
+    password_confirmation { 'password' }
+    admin { false }
   end
 
   # WIP
