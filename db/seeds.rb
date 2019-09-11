@@ -6,8 +6,7 @@ PlaylistPose.destroy_all
 Pose.destroy_all
 Playlist.destroy_all
 
-# user = User.create(email: 'admin@email.com', admin: true, password: 'password', password_confirmation: 'password')
-user = User.find_by(email: 'richardson.ae@gmail.com')
+user = User.create(email: 'admin@email.com', admin: true, password: 'password', password_confirmation: 'password')
 
 puts 'Create Number Poses'
 one = user.poses.create!(name: 'one', audio_file: '1.wav', image_file: '1.jpg')
