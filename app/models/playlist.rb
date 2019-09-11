@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Playlist < ApplicationRecord
+  belongs_to :user
   has_many :playlist_poses, dependent: :destroy
   has_many :poses, through: :playlist_poses
 
