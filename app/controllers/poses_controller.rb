@@ -4,21 +4,21 @@ class PosesController < ApplicationController
   before_action :set_pose, only: %i[show edit update destroy]
 
   def index
-    @poses = Pose.all
+    @poses = current_user.poses.all
   end
 
   def show
   end
 
   def new
-    @pose = Pose.new
+    @pose = current_user.poses.new
   end
 
   def edit
   end
 
   def create
-    @pose = Pose.new(pose_params)
+    @pose = current_user.poses.new(pose_params)
 
     if @pose.save
       redirect_to @pose, notice: 'Pose was successfully created.'
@@ -43,10 +43,10 @@ class PosesController < ApplicationController
   private
 
   def set_pose
-    @pose = Pose.find(params[:id])
+    @pose = current_user.poses.find(params[:id])
   end
 
   def pose_params
-    params.require(:pose).permit(:name, :audio_file, :image_file)
+    params.require(:pose).permit(:name, :audio_file, :image_file, :user_id)
   end
 end

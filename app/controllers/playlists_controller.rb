@@ -4,14 +4,14 @@ class PlaylistsController < ApplicationController
   before_action :set_playlist, only: %i[show edit update destroy]
 
   def index
-    @playlists = Playlist.order(:name)
+    @playlists = current_user.playlists.order(:name)
   end
 
   def show
   end
 
   def new
-    @playlist = Playlist.new
+    @playlist = current_user.playlists.new
     15.times { @playlist.playlist_poses.build }
   end
 
@@ -20,7 +20,7 @@ class PlaylistsController < ApplicationController
   end
 
   def create
-    @playlist = Playlist.new(playlist_params)
+    @playlist = current_user.playlists.new(playlist_params)
 
     if @playlist.save
       redirect_to @playlist, notice: 'Playlist was successfully created.'
@@ -45,12 +45,13 @@ class PlaylistsController < ApplicationController
   private
 
   def set_playlist
-    @playlist = Playlist.find(params[:id])
+    @playlist = current_user.playlists.find(params[:id])
   end
 
   def playlist_params
     params.require(:playlist).permit(:name,
                                      :hold_time,
+                                     :user_id,
                                      playlist_poses_attributes: %i[
                                        id
                                        sequence_number
