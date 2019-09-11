@@ -4,6 +4,7 @@ require 'rails_helper'
 
 RSpec.describe Playlist, type: :model do
   context 'associations' do
+    it { should belong_to(:user) }
     it { should have_many(:playlist_poses) }
     it { should have_many(:poses).through(:playlist_poses) }
     it { should accept_nested_attributes_for(:playlist_poses).allow_destroy(true) }
