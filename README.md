@@ -3,7 +3,7 @@
 [![CircleCI](https://circleci.com/gh/lortza/yogaplaylist.svg?style=svg)](https://circleci.com/gh/lortza/yogaplaylist)
 
 
-yogaplaylist is a personal practice app that builds yoga post playlists with a variable pose hold time between poses.
+yogaplaylist is a personal practice app that builds yoga post playlists with a variable pose hold time between poses. Deployed privately at [https://yogaplaylist.herokuapp.com/](https://yogaplaylist.herokuapp.com)
 
 * Ruby 2.5
 * Rails 6
