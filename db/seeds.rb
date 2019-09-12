@@ -34,7 +34,7 @@ playlist.playlist_poses.create!([
 
 puts 'Create Yoga Poses'
 begin_at_head_of_yoga_mat = user.poses.create!(name: 'begin_at_head_of_yoga_mat', audio_file: 'begin_at_head_of_yoga_mat.m4a', image_file: 'standing_straight.png')
-tree = user.poses.create!(name: 'tree', audio_file: 'tree.m4a', image_file: 'tree')
+tree = user.poses.create!(name: 'tree', audio_file: 'tree.m4a', image_file: 'tree.png')
 dive_down_to_standing_fwd_bend = user.poses.create!(name: 'dive_down_to_standing_fwd_bend', audio_file: 'dive_down_to_standing_fwd_bend.m4a', image_file: 'standing_forward_bend.png')
 raise_up_to_flat_back = user.poses.create!(name: 'raise_up_to_flat_back', audio_file: 'raise_up_to_flat_back.m4a', image_file: 'flat_back.png')
 back_down_to_standing_fwd_bend = user.poses.create!(name: 'back_down_to_standing_fwd_bend', audio_file: 'back_down_to_standing_fwd_bend.m4a', image_file: 'standing_forward_bend.png')
