@@ -2,6 +2,8 @@
 
 [![CircleCI](https://circleci.com/gh/lortza/yogaplaylist.svg?style=svg)](https://circleci.com/gh/lortza/yogaplaylist)
 
+# CodeClimate Quality Badge
+[![Maintainability](https://api.codeclimate.com/v1/badges/7da95ba014377f246fe7/maintainability)](https://codeclimate.com/github/lortza/yogaplaylist/maintainability)
 
 yogaplaylist is a personal practice app that builds yoga post playlists with a variable pose hold time between poses. Deployed privately at [https://yogaplaylist.herokuapp.com/](https://yogaplaylist.herokuapp.com)
 
