@@ -6,7 +6,7 @@ PlaylistPose.destroy_all
 Pose.destroy_all
 Playlist.destroy_all
 
-user = User.create(email: 'admin@email.com', admin: true, password: 'password', password_confirmation: 'password')
+user = User.create!(email: 'admin@email.com', admin: true, password: 'password', password_confirmation: 'password')
 
 puts 'Create Number Poses'
 one = user.poses.create!(name: 'one', audio_file: '1.wav', image_file: '1.jpg')
@@ -84,6 +84,10 @@ one_leg_tree_on_left = user.poses.create!(name: 'one_leg_tree_on_left', audio_fi
 left_foot_back_on_floor_namaste = user.poses.create!(name: 'left_foot_back_on_floor_namaste', audio_file: 'left_foot_back_on_floor_namaste.m4a', image_file: 'namaste.png')
 right_foot_back_on_floor_namaste = user.poses.create!(name: 'right_foot_back_on_floor_namaste', audio_file: 'right_foot_back_on_floor_namaste.m4a', image_file: 'namaste.png')
 
+Pose.all.each do |pose|
+  new_name = pose.name.tr('_', ' ')
+  pose.update!(name: new_name)
+end
 
 
 puts 'Create Yoga Playlist'
