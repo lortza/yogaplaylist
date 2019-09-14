@@ -1,6 +1,5 @@
-<%= link_to 'Back', playlists_path, class: 'btn btn-sm btn-primary right ml-2' %>
-<%= link_to 'Edit', edit_playlist_path(@playlist), class: 'btn btn-sm btn-secondary right ml-2' %>
-<%= link_to 'Play', '', id: 'button-play', class: 'btn btn-sm btn-success right' %>
+<%= link_to 'Back', playlists_path, class: 'btn btn-sm btn-secondary right ml-2' %>
+<%= link_to 'Edit', edit_playlist_path(@playlist), class: 'btn btn-sm btn-primary right ml-2' %>
 
 <h1>
   <%= @playlist.name %>
@@ -12,17 +11,16 @@
 <table class='table'>
   <thead>
     <tr>
-      <th>Sequence Number</th>
-      <th>Image file</th>
-      <th>Name</th>
-      <th colspan="4"></th>
+      <th>Order</th>
+      <th>Pose</th>
+      <th><%= link_to '<i class="fas fa-play-circle"></i> Play'.html_safe, '#', id: 'button-play', class: 'btn btn-info right' %></th>
     </tr>
   </thead>
 
   <tbody>
     <% @playlist.playlist_poses.order(:sequence_number).each do |playlist_pose| %>
       <tr>
-        <td><%= playlist_pose.sequence_number %></td>
+        <td><span class='sequence-number'><%= playlist_pose.sequence_number %></span></td>
         <td><%= link_to (image_tag playlist_pose.pose.image_file), playlist_pose.pose, class: 'thumbnail' %></td>
         <td><%= playlist_pose.pose.name %></td>
       </tr>
