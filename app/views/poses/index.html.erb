@@ -6,25 +6,22 @@
     <tr>
       <th>Image</th>
       <th>Name</th>
-      <th>Audio file</th>
-      <th>Image file</th>
-      <th colspan="4"></th>
+      <th>Play</th>
     </tr>
   </thead>
 
   <tbody>
     <% @poses.each do |pose| %>
       <tr>
-        <td><%= link_to (image_tag pose.image_file), pose, class: 'thumbnail' %></td>
-        <td><%= pose.name %></td>
-        <td><%= pose.audio_file %></td>
-        <td><%= pose.image_file %></td>
+        <td><%= link_to (image_tag pose.image_file), edit_pose_path(pose), class: 'thumbnail' %></td>
+        <td>
+          <%= link_to pose.name, edit_pose_path(pose) %>
+        </td>
         <td>
           <%= audio_tag "/audio_files/#{pose.audio_file}", class: "audio-play" %>
-          <p id="<%= pose.audio_file %>" class="btn btn-sm btn-primary audioButton">Play</p>
+          <span id="<%= pose.audio_file %>" class="btn btn-sm btn-info audioButton">Play</span>
+          <%#= link_to 'Play', '', id: pose.audio_file, class: 'btn btn-sm btn-primary audioButton' %>
         </td>
-        <td><%= link_to 'Edit', edit_pose_path(pose), class: 'btn btn-sm btn-secondary' %></td>
-        <td><%= link_to 'Delete', pose, class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

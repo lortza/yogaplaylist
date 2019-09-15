@@ -1,6 +1,11 @@
-<h1>Editing Pose</h1>
+<h1>
+  <%= link_to 'Cancel', poses_path, class: 'btn btn-sm btn-secondary right' %>
+  Editing Pose
+</h1>
+
+<center class='mb-2'><%= image_tag @pose.image_file %></center>
 
 <%= render 'form', pose: @pose %>
 
-<%= link_to 'Show', @pose %> |
-<%= link_to 'Back', poses_path %>
+<hr>
+<td><%= link_to 'Delete', @pose, class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
