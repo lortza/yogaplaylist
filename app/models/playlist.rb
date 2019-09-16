@@ -18,7 +18,6 @@ class Playlist < ApplicationRecord
             presence: true,
             numericality: { greater_than: 0 }
 
-
   def duration_in_minutes
     duration_in_seconds / 60
   end
