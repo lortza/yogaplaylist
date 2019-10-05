@@ -6,5 +6,6 @@ FactoryBot.define do
     sequence(:name) { |n| "pose#{n}" }
     sequence(:audio_file) { |n| "pose#{n}.wav" }
     sequence(:image_file) { |n| "pose#{n}.png" }
+    private { false }
   end
 end

@@ -14,4 +14,13 @@ RSpec.describe Pose, type: :model do
     it { should validate_presence_of(:audio_file) }
     it { should validate_presence_of(:image_file) }
   end
+  describe 'self.public' do
+    it 'returns only poses that are not marked as private' do
+      private_pose = create(:pose, private: true)
+      public_pose = create(:pose, private: false)
+
+      expect(Pose.public).to include(public_pose)
+      expect(Pose.public).to_not include(private_pose)
+    end
+  end
 end

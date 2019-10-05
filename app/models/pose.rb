@@ -9,4 +9,7 @@ class Pose < ApplicationRecord
             :audio_file,
             :image_file,
             presence: true
+  def self.public
+    where(private: false)
+  end
 end

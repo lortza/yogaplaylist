@@ -2,6 +2,7 @@
 
 class PosesController < ApplicationController
   before_action :set_pose, only: %i[show edit update destroy]
+  before_action :require_admin
 
   def index
     @poses = current_user.poses.all.order(:name)
