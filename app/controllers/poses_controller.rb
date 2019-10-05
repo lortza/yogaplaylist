@@ -21,7 +21,7 @@ class PosesController < ApplicationController
     @pose = current_user.poses.new(pose_params)
 
     if @pose.save
-      redirect_to @pose, notice: 'Pose was successfully created.'
+      redirect_to poses_url, notice: 'Pose was successfully created.'
     else
       render :new
     end
@@ -29,7 +29,7 @@ class PosesController < ApplicationController
 
   def update
     if @pose.update(pose_params)
-      redirect_to @pose, notice: 'Pose was successfully updated.'
+      redirect_to poses_url, notice: 'Pose was successfully updated.'
     else
       render :edit
     end
