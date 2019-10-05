@@ -14,6 +14,16 @@ RSpec.describe Pose, type: :model do
     it { should validate_presence_of(:audio_file) }
     it { should validate_presence_of(:image_file) }
   end
+
+  describe 'self.by_name' do
+    it 'orders poses alphabetically by name' do
+      pose_z = create(:pose, name: 'Z')
+      pose_a = create(:pose, name: 'A')
+
+      expect(Pose.by_name.first).to eq(pose_a)
+    end
+  end
+
   describe 'self.public' do
     it 'returns only poses that are not marked as private' do
       private_pose = create(:pose, private: true)

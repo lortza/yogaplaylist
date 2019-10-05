@@ -9,6 +9,9 @@ class Pose < ApplicationRecord
             :audio_file,
             :image_file,
             presence: true
+
+  scope :by_name, -> { order(name: 'ASC') }
+
   def self.public
     where(private: false)
   end
