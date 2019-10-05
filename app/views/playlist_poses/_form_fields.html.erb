@@ -1,6 +1,6 @@
 <td><%= f_playlist_pose.text_field :sequence_number, class: 'form-control input--small' %></td>
 <td>
-  <%= f_playlist_pose.collection_select :pose_id, Pose.public.by_name, :id, :name, { prompt: "-- Select a Pose --" }, class: 'form-control' %>
+  <%= f_playlist_pose.collection_select :pose_id, form_poses(current_user), :id, :name, { prompt: "-- Select a Pose --" }, class: 'form-control' %>
 </td>
 
 <td><%= f_playlist_pose.check_box :_destroy if f_playlist_pose.object.persisted? %></td>

@@ -5,7 +5,7 @@ class PosesController < ApplicationController
   before_action :require_admin
 
   def index
-    @poses = current_user.poses.all.order(:name)
+    @poses = current_user.poses.by_name
   end
 
   def show
