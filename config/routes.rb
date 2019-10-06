@@ -2,7 +2,8 @@
 
 Rails.application.routes.draw do
   root 'playlists#index'
-  devise_for :users, skip: [:registrations] # this 'skip' prevents people from freating new acconuts
+  devise_for :users
+  # devise_for :users, skip: [:registrations] # this 'skip' prevents people from freating new acconuts
   resources :playlist_poses
   resources :playlists
   resources :poses, only: %i[index new create edit update destroy]

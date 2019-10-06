@@ -1,5 +1,5 @@
-<%= link_to 'Back', playlists_path, class: 'btn btn-sm btn-secondary right ml-2' %>
-<%= link_to 'Edit', edit_playlist_path(@playlist), class: 'btn btn-sm btn-primary right ml-2' %>
+<%= link_to 'Back', playlists_path, class: button_classes('secondary right ml-2') %>
+<%= link_to 'Edit', edit_playlist_path(@playlist), class: button_classes('primary right ml-2') %>
 
 <h1>
   <%= @playlist.name %>
@@ -16,7 +16,7 @@
     <tr>
       <th>Order</th>
       <th>Pose</th>
-      <th><%= link_to '<i class="fas fa-play-circle"></i> Play'.html_safe, '#', id: 'button-play', class: 'btn btn-info right' %></th>
+      <th><%= link_to '<i class="fas fa-play-circle"></i> Play'.html_safe, '#', id: 'button-play', class: button_classes('info right') %></th>
     </tr>
   </thead>
 
