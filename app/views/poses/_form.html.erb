@@ -22,6 +22,13 @@
     </div>
   </div>
 
+  <div class='form-group row'>
+    <%= form.label :admin_only, class: 'col-sm-2 col-form-label'  %>
+    <div class='col-sm-10'>
+      <%= form.check_box :admin_only, class: 'form-control' %>
+    </div>
+  </div>
+
   <div class='actions mt-3'>
     <%= form.submit class: 'btn btn-sm btn-primary'%>
   </div>

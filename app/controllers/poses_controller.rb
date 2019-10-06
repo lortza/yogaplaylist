@@ -48,6 +48,6 @@ class PosesController < ApplicationController
   end
 
   def pose_params
-    params.require(:pose).permit(:name, :audio_file, :image_file, :user_id)
+    params.require(:pose).permit(:name, :audio_file, :image_file, :user_id, :admin_only)
   end
 end
