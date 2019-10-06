@@ -1,5 +1,5 @@
 <h1>
-  <%= link_to 'Cancel', poses_path, class: 'btn btn-sm btn-secondary right' %>
+  <%= link_to 'Cancel', poses_path, class: button_classes('secondary right') %>
   Editing Pose
 </h1>
 
@@ -8,4 +8,4 @@
 <%= render 'form', pose: @pose %>
 
 <hr>
-<td><%= link_to 'Delete', @pose, class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<td><%= link_to 'Delete', @pose, class: button_classes('danger'), method: :delete, data: { confirm: 'Are you sure?' } %></td>
