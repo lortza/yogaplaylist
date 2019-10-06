@@ -26,7 +26,7 @@ class PlaylistsController < ApplicationController
 
   def create
     @playlist = current_user.playlists.new(playlist_params)
-    @playlist.playlist_poses = @playlist.playlist_poses.reject {|pose| pose.pose_id == nil }
+    @playlist.playlist_poses = @playlist.playlist_poses.reject { |pose| pose.pose_id.nil? }
 
     if @playlist.save
       redirect_to @playlist, notice: 'Playlist was successfully created.'
