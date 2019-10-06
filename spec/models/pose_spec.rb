@@ -21,16 +21,17 @@ RSpec.describe Pose, type: :model do
       pose_a = create(:pose, name: 'A')
 
       expect(Pose.by_name.first).to eq(pose_a)
+      expect(Pose.by_name.last).to eq(pose_z)
     end
   end
 
-  describe 'self.public' do
-    it 'returns only poses that are not marked as private' do
-      private_pose = create(:pose, private: true)
-      public_pose = create(:pose, private: false)
+  describe 'self.public_poses' do
+    it 'returns only poses that are not marked as admin_only' do
+      private_pose = create(:pose, admin_only: true)
+      public_pose = create(:pose, admin_only: false)
 
-      expect(Pose.public).to include(public_pose)
-      expect(Pose.public).to_not include(private_pose)
+      expect(Pose.public_poses).to include(public_pose)
+      expect(Pose.public_poses).to_not include(private_pose)
     end
   end
 end

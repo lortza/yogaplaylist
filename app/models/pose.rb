@@ -11,8 +11,5 @@ class Pose < ApplicationRecord
             presence: true
 
   scope :by_name, -> { order(name: 'ASC') }
-
-  def self.public
-    where(private: false)
-  end
+  scope :public_poses, -> { where(admin_only: false) }
 end
