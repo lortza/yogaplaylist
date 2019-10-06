@@ -12,15 +12,21 @@ class PlaylistsController < ApplicationController
 
   def new
     @playlist = current_user.playlists.new
-    15.times { @playlist.playlist_poses.build }
+    i = 1
+    15.times do
+      @playlist.playlist_poses.build(sequence_number: i)
+      i += 1
+    end
   end
 
   def edit
+    @playlist.playlist_poses.order(:sequence_number)
     3.times { @playlist.playlist_poses.build }
   end
 
   def create
     @playlist = current_user.playlists.new(playlist_params)
+    @playlist.playlist_poses = @playlist.playlist_poses.reject { |pose| pose.pose_id.nil? }
 
     if @playlist.save
       redirect_to @playlist, notice: 'Playlist was successfully created.'

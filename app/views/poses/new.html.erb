@@ -1,5 +1,6 @@
-<h1>New Pose</h1>
+<h1>
+  <%= link_to 'Cancel', poses_path, class: 'btn btn-sm btn-secondary right' %>
+  New Pose
+</h1>
 
 <%= render 'form', pose: @pose %>
-
-<%= link_to 'Back', poses_path %>

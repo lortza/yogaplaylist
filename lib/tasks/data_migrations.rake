@@ -23,5 +23,14 @@ namespace :data do
     puts "Done!"
   end
 
+  desc "make admin poses private"
+  task :private_poses => :environment do
+    public_poses = ['warrior1', 'warrior2', 'reverse warrior', 'standing forward bend', 'runners pose', 'triangle pose left arm up', 'triangle pose right arm up']
+    admin_poses = Pose.where.not(name: public_poses)
+
+    admin_poses.each do |pose|
+      pose.update!(admin_only: true)
+    end
+  end
 
 end

@@ -2,9 +2,10 @@
 
 class PosesController < ApplicationController
   before_action :set_pose, only: %i[show edit update destroy]
+  before_action :require_admin
 
   def index
-    @poses = current_user.poses.all.order(:name)
+    @poses = current_user.poses.by_name
   end
 
   def show
@@ -21,7 +22,7 @@ class PosesController < ApplicationController
     @pose = current_user.poses.new(pose_params)
 
     if @pose.save
-      redirect_to @pose, notice: 'Pose was successfully created.'
+      redirect_to poses_url, notice: 'Pose was successfully created.'
     else
       render :new
     end
@@ -29,7 +30,7 @@ class PosesController < ApplicationController
 
   def update
     if @pose.update(pose_params)
-      redirect_to @pose, notice: 'Pose was successfully updated.'
+      redirect_to poses_url, notice: 'Pose was successfully updated.'
     else
       render :edit
     end
@@ -47,6 +48,6 @@ class PosesController < ApplicationController
   end
 
   def pose_params
-    params.require(:pose).permit(:name, :audio_file, :image_file, :user_id)
+    params.require(:pose).permit(:name, :audio_file, :image_file, :user_id, :admin_only)
   end
 end
