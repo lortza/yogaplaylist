@@ -20,6 +20,7 @@ class PlaylistsController < ApplicationController
   end
 
   def edit
+    @playlist.playlist_poses.order(:sequence_number)
     3.times { @playlist.playlist_poses.build }
   end
 
