@@ -32,9 +32,9 @@ playlist = user.playlists.find_or_create_by(name: 'one two three four five') { |
   playlist.playlist_poses.find_or_create_by(sequence_number: 4, pose_id: four.id)
   playlist.playlist_poses.find_or_create_by(sequence_number: 5, pose_id: five.id)
 
-puts 'Create Yoga Poses'
+puts 'Create 30 Second Yoga Poses'
 begin_at_head_of_yoga_mat = user.poses.find_or_create_by(audio_file: 'begin_at_head_of_yoga_mat.m4a') { |pose| pose.name = 'begin_at_head_of_yoga_mat'; pose.image_file = 'standing_straight.png' }
-tree = user.poses.find_or_create_by(audio_file: 'tree.m4a') { |pose| pose.name = 'tree'; pose.image_file = 'tree.png' }
+raise_both_arms_above_head_for_tree = user.poses.find_or_create_by(audio_file: 'raise_both_arms_above_head_for_tree.m4a') { |pose| pose.name = 'raise_both_arms_above_head_for_tree'; pose.image_file = 'tree.png' }
 dive_down_to_standing_fwd_bend = user.poses.find_or_create_by(audio_file: 'dive_down_to_standing_fwd_bend.m4a') { |pose| pose.name = 'dive_down_to_standing_fwd_bend'; pose.image_file = 'standing_forward_bend.png' }
 raise_up_to_flat_back = user.poses.find_or_create_by(audio_file: 'raise_up_to_flat_back.m4a') { |pose| pose.name = 'raise_up_to_flat_back'; pose.image_file = 'flat_back.png' }
 back_down_to_standing_fwd_bend = user.poses.find_or_create_by(audio_file: 'back_down_to_standing_fwd_bend.m4a') { |pose| pose.name = 'back_down_to_standing_fwd_bend'; pose.image_file = 'standing_forward_bend.png' }
@@ -84,13 +84,53 @@ one_leg_tree_on_left = user.poses.find_or_create_by(audio_file: 'one_leg_tree_on
 left_foot_back_on_floor_namaste = user.poses.find_or_create_by(audio_file: 'left_foot_back_on_floor_namaste.m4a') { |pose| pose.name = 'left_foot_back_on_floor_namaste'; pose.image_file = 'namaste.png' }
 right_foot_back_on_floor_namaste = user.poses.find_or_create_by(audio_file: 'right_foot_back_on_floor_namaste.m4a') { |pose| pose.name = 'right_foot_back_on_floor_namaste'; pose.image_file = 'namaste.png' }
 
+puts "Generic yoga poses"
+bow_pose = user.poses.find_or_create_by(audio_file: 'bow_pose.m4a') { |pose| pose.name = 'bow_pose'; pose.image_file = 'bow_pose.png' }
+childs_pose = user.poses.find_or_create_by(audio_file: 'childs_pose.m4a') { |pose| pose.name = 'childs_pose'; pose.image_file = 'childs_pose.png' }
+cobra = user.poses.find_or_create_by(audio_file: 'cobra.m4a') { |pose| pose.name = 'cobra'; pose.image_file = 'cobra.png' }
+crescent_pose = user.poses.find_or_create_by(audio_file: 'crescent_pose.m4a') { |pose| pose.name = 'crescent_pose'; pose.image_file = 'crescent_pose_left.png' }
+crescent_pose_left = user.poses.find_or_create_by(audio_file: 'crescent_pose_left.m4a') { |pose| pose.name = 'crescent_pose_left'; pose.image_file = 'crescent_pose_left.png' }
+crescent_pose_right = user.poses.find_or_create_by(audio_file: 'crescent_pose_right.m4a') { |pose| pose.name = 'crescent_pose_right'; pose.image_file = 'crescent_pose_right.png' }
+downward_dog = user.poses.find_or_create_by(audio_file: 'downward_dog.m4a') { |pose| pose.name = 'downward_dog'; pose.image_file = 'downward_dog.png' }
+eagle_pose = user.poses.find_or_create_by(audio_file: 'eagle_pose.m4a') { |pose| pose.name = 'eagle_pose'; pose.image_file = 'eagle_pose.png' }
+# flat_back = user.poses.find_or_create_by(audio_file: 'flat_back.m4a') { |pose| pose.name = 'flat_back'; pose.image_file = 'flat_back.png' }
+half_headstand = user.poses.find_or_create_by(audio_file: 'half_headstand.m4a') { |pose| pose.name = 'half_headstand'; pose.image_file = 'half_headstand' }
+headstand = user.poses.find_or_create_by(audio_file: 'headstand.m4a') { |pose| pose.name = 'headstand'; pose.image_file = 'headstand' }
+# half_moon = user.poses.find_or_create_by(audio_file: 'half_moon.m4a') { |pose| pose.name = 'half_moon'; pose.image_file = 'half_moon_left.png' }
+# half_moon_left = user.poses.find_or_create_by(audio_file: 'half_moon_left.m4a') { |pose| pose.name = 'half_moon_left'; pose.image_file = 'half_moon_left.png' }
+# half_moon_right = user.poses.find_or_create_by(audio_file: 'half_moon_right.m4a') { |pose| pose.name = 'half_moon_right'; pose.image_file = 'half_moon_right.png' }
+mountain_pose = user.poses.find_or_create_by(audio_file: 'mountain_pose.m4a') { |pose| pose.name = 'mountain_pose'; pose.image_file = 'mountain_pose.png' }
+pigeon = user.poses.find_or_create_by(audio_file: 'pigeon.m4a') { |pose| pose.name = 'pigeon'; pose.image_file = 'pigeon.png' }
+plank = user.poses.find_or_create_by(audio_file: 'plank.m4a') { |pose| pose.name = 'plank'; pose.image_file = 'plank.png' }
+plow_pose = user.poses.find_or_create_by(audio_file: 'plow_pose.m4a') { |pose| pose.name = 'plow_pose'; pose.image_file = 'plow_pose.png' }
+# reverse_warrior = user.poses.find_or_create_by(audio_file: 'reverse_warrior.m4a') { |pose| pose.name = 'reverse_warrior'; pose.image_file = 'reverse_warrior_left.png' }
+# reverse_warrior_left = user.poses.find_or_create_by(audio_file: 'reverse_warrior_left.m4a') { |pose| pose.name = 'reverse_warrior_left'; pose.image_file = 'reverse_warrior_left.png' }
+# reverse_warrior_right = user.poses.find_or_create_by(audio_file: 'reverse_warrior_right.m4a') { |pose| pose.name = 'reverse_warrior_right'; pose.image_file = 'warrior2_right.png' }
+runners_pose = user.poses.find_or_create_by(audio_file: 'runners_pose.m4a') { |pose| pose.name = 'runners_pose'; pose.image_file = 'runners_pose_left.png' }
+# runners_pose_left = user.poses.find_or_create_by(audio_file: 'runners_pose_left.m4a') { |pose| pose.name = 'runners_pose_left'; pose.image_file = 'runners_pose_left.png' }
+# runners_pose_right = user.poses.find_or_create_by(audio_file: 'runners_pose_right.m4a') { |pose| pose.name = 'runners_pose_right'; pose.image_file = 'runners_pose_right.png' }
+savasana = user.poses.find_or_create_by(audio_file: 'savasana.m4a') { |pose| pose.name = 'savasana'; pose.image_file = 'savasana.png' }
+seated_forward_bend = user.poses.find_or_create_by(audio_file: 'seated_forward_bend.m4a') { |pose| pose.name = 'seated_forward_bend'; pose.image_file = 'seated_forward_bend.png' }
+standing_forward_bend = user.poses.find_or_create_by(audio_file: 'standing_forward_bend.m4a') { |pose| pose.name = 'standing_forward_bend'; pose.image_file = 'standing_forward_bend.png' }
+# side_plank = user.poses.find_or_create_by(audio_file: 'side_plank.m4a') { |pose| pose.name = 'side_plank'; pose.image_file = 'side_plank_left.png' }
+# side_plank_left = user.poses.find_or_create_by(audio_file: 'side_plank_left.m4a') { |pose| pose.name = 'side_plank_left'; pose.image_file = 'side_plank_left.png' }
+# side_plank_right = user.poses.find_or_create_by(audio_file: 'side_plank_right.m4a') { |pose| pose.name = 'side_plank_right'; pose.image_file = 'side_plank_right.png' }
+tree = user.poses.find_or_create_by(audio_file: 'tree.m4a') { |pose| pose.name = 'tree'; pose.image_file = 'tree.png' }
+triangle_pose = user.poses.find_or_create_by(audio_file: 'triangle_pose.m4a') { |pose| pose.name = 'triangle_pose'; pose.image_file = 'triangle_pose_left.png' }
+# triangle_pose_left = user.poses.find_or_create_by(audio_file: 'triangle_pose_left.m4a') { |pose| pose.name = 'triangle_pose_left'; pose.image_file = 'triangle_pose_left.png' }
+# triangle_pose_right = user.poses.find_or_create_by(audio_file: 'triangle_pose_right.m4a') { |pose| pose.name = 'triangle_pose_right'; pose.image_file = 'triangle_pose_right.png' }
+upward_dog = user.poses.find_or_create_by(audio_file: 'upward_dog.m4a') { |pose| pose.name = 'upward_dog'; pose.image_file = 'upward_dog.png' }
+warrior1_left = user.poses.find_or_create_by(audio_file: 'warrior1_left.m4a') { |pose| pose.name = 'warrior1_left'; pose.image_file = 'warrior1_left.png' }
+warrior1_right = user.poses.find_or_create_by(audio_file: 'warrior1_right.m4a') { |pose| pose.name = 'warrior1_right'; pose.image_file = 'warrior1_right.png' }
+warrior2_left = user.poses.find_or_create_by(audio_file: 'warrior2_left.m4a') { |pose| pose.name = 'warrior2_left'; pose.image_file = 'warrior2_left.png' }
+warrior2_right = user.poses.find_or_create_by(audio_file: 'warrior2_right.m4a') { |pose| pose.name = 'warrior2_right'; pose.image_file = 'warrior2_right.png' }
+
 Pose.all.each do |pose|
   new_name = pose.name.tr('_', ' ')
   pose.update!(name: new_name)
 end
 
-
-puts 'Create Yoga Playlist'
+puts 'Create 30 Second Yoga Playlist'
 playlist = user.playlists.find_or_create_by(name: 'flexibility playlist') { |pose| pose.hold_time = 5 }
   playlist.playlist_poses.find_or_create_by(sequence_number: 1, pose_id: begin_at_head_of_yoga_mat.id)
   playlist.playlist_poses.find_or_create_by(sequence_number: 2, pose_id: tree.id)
@@ -152,3 +192,60 @@ playlist = user.playlists.find_or_create_by(name: 'flexibility playlist') { |pos
   playlist.playlist_poses.find_or_create_by(sequence_number: 57, pose_id: come_back_down_to_standing_fwd_bend.id)
   playlist.playlist_poses.find_or_create_by(sequence_number: 58, pose_id: one_leg_tree_on_left.id) # left
   playlist.playlist_poses.find_or_create_by(sequence_number: 59, pose_id: right_foot_back_on_floor_namaste.id) # right
+
+
+puts 'Create p90x CardioX Yoga Playlist'
+playlist = user.playlists.find_or_create_by(name: 'CardioX Yoga') { |pose| pose.hold_time = 10 }
+  playlist.playlist_poses.find_or_create_by(sequence_number: 1, pose_id: begin_at_head_of_yoga_mat.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 2, pose_id: standing_forward_bend.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 3, pose_id: flat_back.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 4, pose_id: standing_forward_bend.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 5, pose_id: plank.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 6, pose_id: upward_dog.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 7, pose_id: downward_dog.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 8, pose_id: standing_forward_bend.id)
+
+  playlist.playlist_poses.find_or_create_by(sequence_number: 9, pose_id: runners_pose_right.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 10, pose_id: plank.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 11, pose_id: upward_dog.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 12, pose_id: downward_dog.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 13, pose_id: runners_pose_left.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 14, pose_id: plank.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 15, pose_id: upward_dog.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 16, pose_id: downward_dog.id)
+
+  playlist.playlist_poses.find_or_create_by(sequence_number: 17, pose_id: warrior1_right.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 18, pose_id: plank.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 19, pose_id: upward_dog.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 20, pose_id: downward_dog.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 21, pose_id: warrior1_left.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 22, pose_id: plank.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 23, pose_id: upward_dog.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 24, pose_id: downward_dog.id)
+
+  playlist.playlist_poses.find_or_create_by(sequence_number: 25, pose_id: warrior1_right.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 26, pose_id: warrior2_right.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 27, pose_id: plank.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 28, pose_id: upward_dog.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 29, pose_id: downward_dog.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 30, pose_id: warrior1_left.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 31, pose_id: warrior2_left.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 32, pose_id: plank.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 33, pose_id: upward_dog.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 34, pose_id: downward_dog.id)
+
+  playlist.playlist_poses.find_or_create_by(sequence_number: 35, pose_id: warrior1_right.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 36, pose_id: warrior2_right.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 37, pose_id: reverse_warrior_right.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 38, pose_id: plank.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 39, pose_id: upward_dog.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 40, pose_id: downward_dog.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 41, pose_id: warrior1_left.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 42, pose_id: warrior2_left.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 43, pose_id: reverse_warrior_left.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 44, pose_id: plank.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 45, pose_id: upward_dog.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 46, pose_id: downward_dog.id)
+
+  playlist.playlist_poses.find_or_create_by(sequence_number: 47, pose_id: standing_forward_bend.id)
+  playlist.playlist_poses.find_or_create_by(sequence_number: 48, pose_id: mountain.id)
