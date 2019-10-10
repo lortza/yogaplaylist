@@ -24,7 +24,7 @@
     <% @playlist.playlist_poses.order(:sequence_number).each do |playlist_pose| %>
       <tr>
         <td><span class='sequence-number'><%= playlist_pose.sequence_number %></span></td>
-        <td><%= link_to (image_tag playlist_pose.pose.image_file), playlist_pose.pose, class: 'thumbnail' %></td>
+        <td><%= link_to display_pose_image(playlist_pose.pose), playlist_pose.pose, class: 'thumbnail' %></td>
         <td><%= playlist_pose.pose.name %></td>
       </tr>
     <% end %>

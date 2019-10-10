@@ -3,7 +3,7 @@
   Editing Pose
 </h1>
 
-<center class='mb-2'><%= image_tag @pose.image_file %></center>
+<center class='mb-2'><%= display_pose_image(@pose) %></center>
 
 <%= render 'form', pose: @pose %>
 
