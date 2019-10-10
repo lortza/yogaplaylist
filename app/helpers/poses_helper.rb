@@ -6,7 +6,8 @@ module PosesHelper
   end
 
   def display_pose_image(pose)
-    file = Rails.application.assets.find_asset(pose.image_file) ? pose.image_file : 'placeholder.png'
-    image_tag file
+    # file = Rails.application.assets.find_asset(pose.image_file) ? pose.image_file : 'placeholder.png'
+    # image_tag file
+    image_tag pose.image_file
   end
 end
