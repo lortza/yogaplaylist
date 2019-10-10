@@ -13,7 +13,7 @@
   <tbody>
     <% @poses.each do |pose| %>
       <tr>
-        <td><%= link_to (image_tag pose.image_file), edit_pose_path(pose), class: 'thumbnail' %></td>
+        <td><%= link_to display_pose_image(pose), edit_pose_path(pose), class: 'thumbnail' %></td>
         <td>
           <%= link_to pose.name, edit_pose_path(pose) %>
         </td>
