@@ -94,8 +94,8 @@ crescent_pose_right = user.poses.find_or_create_by(audio_file: 'crescent_pose_ri
 downward_dog = user.poses.find_or_create_by(audio_file: 'downward_dog.m4a') { |pose| pose.name = 'downward_dog'; pose.image_file = 'downward_dog.png'; admin_only = false }
 eagle_pose = user.poses.find_or_create_by(audio_file: 'eagle_pose.m4a') { |pose| pose.name = 'eagle_pose'; pose.image_file = 'placeholder.png'; admin_only = false }
 flat_back = user.poses.find_or_create_by(audio_file: 'flat_back.m4a') { |pose| pose.name = 'flat_back'; pose.image_file = 'flat_back.png'; admin_only = false }
-half_headstand = user.poses.find_or_create_by(audio_file: 'half_headstand.m4a') { |pose| pose.name = 'half_headstand'; pose.image_file = 'placeholder'; admin_only = false }
-headstand = user.poses.find_or_create_by(audio_file: 'headstand.m4a') { |pose| pose.name = 'headstand'; pose.image_file = 'placeholder'; admin_only = false }
+half_headstand = user.poses.find_or_create_by(audio_file: 'half_headstand.m4a') { |pose| pose.name = 'half_headstand'; pose.image_file = 'placeholder.png'; admin_only = false }
+headstand = user.poses.find_or_create_by(audio_file: 'headstand.m4a') { |pose| pose.name = 'headstand'; pose.image_file = 'placeholder.png'; admin_only = false }
 half_moon_pose = user.poses.find_or_create_by(audio_file: 'half_moon_pose.m4a') { |pose| pose.name = 'half_moon_pose'; pose.image_file = 'half_moon_pose_left.png'; admin_only = false }
 half_moon_pose_left = user.poses.find_or_create_by(audio_file: 'half_moon_pose_left.m4a') { |pose| pose.name = 'half_moon_pose_left'; pose.image_file = 'half_moon_pose_standing_on_left.png'; admin_only = false }
 half_moon_pose_right = user.poses.find_or_create_by(audio_file: 'half_moon_pose_right.m4a') { |pose| pose.name = 'half_moon_pose_right'; pose.image_file = 'half_moon_pose_standing_on_right.png'; admin_only = false }
