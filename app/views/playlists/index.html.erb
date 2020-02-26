@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Duration</th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -14,6 +15,7 @@
     <% @playlists.each do |playlist| %>
       <tr>
         <td><%= link_to playlist.name, playlist %></td>
+        <td><%= playlist.duration_in_minutes %> min</td>
         <td><%= link_to 'Edit', edit_playlist_path(playlist) %></td>
         <td><%= link_to 'Destroy', playlist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
