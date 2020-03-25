@@ -42,7 +42,7 @@ group :test do
   gem 'database_cleaner'        # clears out test db
   gem 'factory_bot_rails'       # factory support for rspec
   gem 'launchy'                 # open browser with save_and_open_page
-  gem 'rspec-rails', '~> 3.9'   # rspec testing
+  gem 'rspec-rails', '~> 4.0'   # rspec testing
   gem 'shoulda-matchers'        # library for easier testing syntax
   gem 'webdrivers'              # to help with testing
 end
