@@ -13,7 +13,7 @@ gem 'puma', '~> 4.3'                       # Use Puma as the app server
 gem 'rails', '~> 6.0.3'                    # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'sass-rails', '~> 6'                   # Use SCSS for stylesheets
 gem 'turbolinks', '~> 5'                   # https://github.com/turbolinks/turbolinks
-gem 'webpacker', '~> 5.1'                  # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
+gem 'webpacker', '~> 5.2'                  # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 # gem 'redis', '~> 4.0'                    # Use Redis adapter to run Action Cable in production
 # gem 'bcrypt', '~> 3.1.7'                 # Use Active Model has_secure_password
 # gem 'image_processing', '~> 1.2'         # Use Active Storage variant
