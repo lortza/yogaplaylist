@@ -6,7 +6,13 @@
     "@rails/activestorage": "^6.0.0-alpha",
     "@rails/ujs": "^6.0.0-alpha",
     "@rails/webpacker": "^4.0.7",
-    "turbolinks": "^5.2.0"
+    "dot-prop": "4.2.1",
+    "kind-of": "6.0.3",
+    "minimist": "^1.2.3",
+    "serialize-javascript": "^3.1.0",
+    "turbolinks": "^5.2.0",
+    "webpack": "^4.0.0",
+    "websocket-extensions": "0.1.4"
   },
   "version": "0.1.0",
   "devDependencies": {
