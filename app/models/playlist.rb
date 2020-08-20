@@ -2,6 +2,7 @@
 
 class Playlist < ApplicationRecord
   SPEAK_TIME_BUFFER_SECONDS = 2
+  PLAYLIST_COMPLETE_AUDIO_FILE = 'chime.wav'
 
   belongs_to :user
   has_many :playlist_poses, dependent: :destroy
@@ -33,6 +34,10 @@ class Playlist < ApplicationRecord
   end
 
   def tracks_for_js
-    playlist_poses.order(:sequence_number).map(&:audio_file).to_json.html_safe # rubocop:disable Rails/OutputSafety
+    tracks = playlist_poses.order(:sequence_number).map do |pose|
+      { id: pose.id, audio_file: pose.audio_file }
+    end
+    tracks << { id: 0, audio_file: PLAYLIST_COMPLETE_AUDIO_FILE }
+    tracks.to_json.html_safe # rubocop:disable Rails/OutputSafety
   end
 end

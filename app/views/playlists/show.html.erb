@@ -11,7 +11,7 @@
   <strong>Duration:</strong> <%= @playlist.duration_in_minutes %> minutes
 </p>
 
-<table class='table'>
+<table class='table'  id='table'>
   <thead>
     <tr>
       <th>Order</th>
@@ -22,7 +22,7 @@
 
   <tbody>
     <% @playlist.playlist_poses.order(:sequence_number).each do |playlist_pose| %>
-      <tr>
+      <tr id="<%= playlist_pose.id %>">
         <td><span class='sequence-number'><%= playlist_pose.sequence_number %></span></td>
         <td><%= link_to display_pose_image(playlist_pose.pose), playlist_pose.pose, class: 'thumbnail' %></td>
         <td><%= playlist_pose.pose.name %></td>
@@ -30,37 +30,9 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
 
-<%#= javascript_tag("playTracks(#{@playlist.hold_time}, #{@playlist.tracks_for_js})") %>
-
+<%= javascript_include_tag 'playlists'%>
 <script type="text/javascript">
   playTracks(<%= @playlist.hold_time %>, <%= @playlist.speak_time_buffer %>, <%= @playlist.tracks_for_js %>);
-
-  function playTracks(holdTimeInput, speakTimeBuffer, audioTracks){
-    // document.addEventListener('DOMContentLoaded', function () {
-      const holdTime = (holdTimeInput + speakTimeBuffer) * 1000;
-
-      const soundPlaylistComplete = 'chime.wav';
-      audioTracks.push(soundPlaylistComplete)
-
-      const button = document.getElementById('button-play')
-      button.addEventListener('click', function(e) {
-        event.preventDefault;
-
-        console.log('Begin!');
-        audioTracks.forEach(function(item, index, array) {
-          setTimeout( (function( index ) {
-            return function() {
-              console.log(`playing: ${item}`);
-              const track = new Audio(`/audio_files/${item}`);
-              track.play().catch(e => { console.log(e); });
-            };
-          }(index)), (holdTime * index) );
-        });
-
-      });// onclick
-    // }); //DOMContentLoaded
-  };// playTracks
 </script>
