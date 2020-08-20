@@ -1,3 +1,11 @@
+$skyblue-light: #f5fcff;
+$skyblue: #b7e9f7;
+
 .sequence-number {
   font-size: 2em;
+}
+
+.active-row {
+  background: $skyblue-light;
+  border: 2px solid $skyblue;
 }
