@@ -31,7 +31,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'listen', '>= 3.0.5', '< 3.3'
+  gem 'listen', '>= 3.0.5', '< 3.4'
   gem 'rb-readline'             # resolves readline errors and allows rails con to run
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
