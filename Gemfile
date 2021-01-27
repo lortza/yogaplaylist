@@ -9,7 +9,7 @@ gem 'bootsnap', '>= 1.4.2', require: false # Reduces boot times through caching;
 gem 'devise'                               # User authentication
 gem 'jbuilder', '~> 2.10'                  # https://github.com/rails/jbuilder
 gem 'pg', '>= 0.18', '< 2.0'               # Use postgresql as the database for Active Record
-gem 'puma', '~> 4.3'                       # Use Puma as the app server
+gem 'puma', '~> 5.2'                       # Use Puma as the app server
 gem 'rails', '~> 6.0.3'                    # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'sass-rails', '~> 6'                   # Use SCSS for stylesheets
 gem 'turbolinks', '~> 5'                   # https://github.com/turbolinks/turbolinks
