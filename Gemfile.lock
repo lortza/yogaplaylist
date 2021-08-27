@@ -344,7 +344,7 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   pry-rails
   puma (~> 4.3)
-  rails (~> 6.0.3)
+  rails (~> 6.0.3.4)
   rb-readline
   reek
   rspec-rails (~> 4.0)
