@@ -9,8 +9,8 @@ gem 'bootsnap', '>= 1.4.2', require: false # Reduces boot times through caching;
 gem 'devise'                               # User authentication
 gem 'jbuilder', '~> 2.10'                  # https://github.com/rails/jbuilder
 gem 'pg', '>= 0.18', '< 2.0'               # Use postgresql as the database for Active Record
-gem 'puma', '~> 4.3'                       # Use Puma as the app server
-gem 'rails', '~> 6.0.3'                    # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'puma'                                 # Use Puma as the app server
+gem 'rails', '~> 6.0.3.4'                  # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'sass-rails', '~> 6'                   # Use SCSS for stylesheets
 gem 'turbolinks', '~> 5'                   # https://github.com/turbolinks/turbolinks
 gem 'webpacker', '~> 5.2'                  # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -31,7 +31,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'listen', '>= 3.0.5', '< 3.3'
+  gem 'listen'
   gem 'rb-readline'             # resolves readline errors and allows rails con to run
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
@@ -42,7 +42,7 @@ group :test do
   gem 'database_cleaner'        # clears out test db
   gem 'factory_bot_rails'       # factory support for rspec
   gem 'launchy'                 # open browser with save_and_open_page
-  gem 'rspec-rails', '~> 4.0'   # rspec testing
+  gem 'rspec-rails'             # rspec testing
   gem 'shoulda-matchers'        # library for easier testing syntax
   gem 'webdrivers'              # to help with testing
 end
