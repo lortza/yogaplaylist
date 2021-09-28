@@ -1,7 +1,11 @@
-<h1>
+<div class='mb-3'>
   <%= link_to 'Cancel', poses_path, class: button_classes('secondary right') %>
-  Editing Pose
-</h1>
+  <%= link_to 'Home', root_path %> <%= chevron_right %>
+  <%= link_to 'Poses', poses_path %> <%= chevron_right %>
+  Edit
+</div>
+
+<h2><%= @pose.name %></h2>
 
 <center class='mb-2'><%= display_pose_image(@pose) %></center>
 

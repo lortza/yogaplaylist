@@ -1,4 +1,12 @@
-<h1>Editing Playlist</h1>
+<div class='mb-3'>
+  <%= link_to 'Cancel', playlists_path, class: button_classes('secondary right') %>
+  <%= link_to 'Home', root_path %> <%= chevron_right %>
+  <%= link_to 'Playlists', playlists_path %> <%= chevron_right %>
+  <%= link_to @playlist.name, playlist_path(@playlist) %> <%= chevron_right %>
+  Edit
+</div>
+
+<h2><%= @playlist.name %></h2>
 
 <%= render 'form', playlist: @playlist %>
 
