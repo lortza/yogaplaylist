@@ -1,6 +1,10 @@
-<h1>
-  <%= link_to 'Back', playlists_path, class: button_classes('secondary right') %>
-  New Playlist
-</h1>
+<div class='mb-3'>
+  <%= link_to 'Cancel', playlists_path, class: button_classes('secondary right') %>
+  <%= link_to 'Home', root_path %> <%= chevron_right %>
+  <%= link_to 'Playlists', playlists_path %> <%= chevron_right %>
+  New
+</div>
+
+<h2>New Playlist</h2>
 
 <%= render 'form', playlist: @playlist %>
