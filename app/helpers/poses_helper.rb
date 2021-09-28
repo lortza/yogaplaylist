@@ -9,7 +9,7 @@ module PosesHelper
     # file = Rails.application.assets.find_asset(pose.image_file) ? pose.image_file : 'placeholder.png'
     # image_tag file
     image_tag pose.image_file
-  rescue
+  rescue StandardError
     image_tag 'image_missing.png'
   end
 end
