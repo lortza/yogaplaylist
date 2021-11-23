@@ -7,7 +7,7 @@ ruby '2.5.1'
 
 gem 'bootsnap', '>= 1.4.2', require: false # Reduces boot times through caching; required in config/boot.rb
 gem 'devise'                               # User authentication
-gem 'jbuilder', '~> 2.10'                  # https://github.com/rails/jbuilder
+gem 'jbuilder', '~> 2.11'                  # https://github.com/rails/jbuilder
 gem 'pg', '>= 0.18', '< 2.0'               # Use postgresql as the database for Active Record
 gem 'puma'                                 # Use Puma as the app server
 gem 'rails', '~> 6.1.4.1'                  # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
