@@ -10,7 +10,7 @@ gem 'devise'                               # User authentication
 gem 'jbuilder', '~> 2.11'                  # https://github.com/rails/jbuilder
 gem 'pg', '>= 0.18', '< 2.0'               # Use postgresql as the database for Active Record
 gem 'puma'                                 # Use Puma as the app server
-gem 'rails', '~> 6.1.4.1'                  # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '~> 6.1.4.3'                  # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'sass-rails', '~> 6'                   # Use SCSS for stylesheets
 gem 'turbolinks', '~> 5'                   # https://github.com/turbolinks/turbolinks
 gem 'webpacker'                            # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
