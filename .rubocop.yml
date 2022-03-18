@@ -33,6 +33,8 @@ Metrics/BlockLength:
     - 'spec/factories/**/*'
     - 'lib/tasks/*'
 
+Rails/I18nLocaleTexts:
+  Enabled: false
 Rails/UniqueValidationWithoutIndex:
   Enabled: false
 
