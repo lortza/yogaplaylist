@@ -19,8 +19,6 @@ AllCops:
     - 'vendor/**/*'
     # - '**/*.erb'
 
-Layout/Documentation:
-  Enabled: false
 Layout/LineLength:
   Max: 120
   Exclude:
@@ -41,7 +39,8 @@ Rails/UniqueValidationWithoutIndex:
 Style/BlockDelimiters:
   Exclude:
     - !ruby/regexp /.*_spec\.rb$/
-
+Style/Documentation:
+  Enabled: false
 # Style/ClassAndModuleChildren:
 #   EnforcedStyle: compact
 Style/EmptyMethod:

@@ -1,14 +1,12 @@
 # YogaPlaylist
 
-[![CircleCI](https://circleci.com/gh/lortza/yogaplaylist.svg?style=svg)](https://circleci.com/gh/lortza/yogaplaylist)
-
 # CodeClimate Quality Badge
 [![Maintainability](https://api.codeclimate.com/v1/badges/7da95ba014377f246fe7/maintainability)](https://codeclimate.com/github/lortza/yogaplaylist/maintainability)
 
 yogaplaylist is a personal practice app that builds yoga post playlists with a variable pose hold time between poses. Deployed privately at [https://yogaplaylist.herokuapp.com/](https://yogaplaylist.herokuapp.com)
 
-* Ruby 2.5
-* Rails 6
+* Ruby
+* Rails
 * Postgres
 
 Temporary files from: https://freesound.org/people/margo_heston/packs/12534/
@@ -22,6 +20,7 @@ Temporary files from: https://freesound.org/people/margo_heston/packs/12534/
 * `rake db:seed`
 * run RuboCop: `rubocop`
 * run tests: `bundle exec rspec`
+* run the app: `rails s`
 
 
 ### Linters

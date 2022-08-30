@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.1'
+ruby '3.1.0'
 
 gem 'bootsnap', '>= 1.4.2', require: false # Reduces boot times through caching; required in config/boot.rb
 gem 'devise'                               # User authentication
@@ -17,6 +17,9 @@ gem 'webpacker'                            # Transpile app-like JavaScript. Read
 # gem 'redis', '~> 4.0'                    # Use Redis adapter to run Action Cable in production
 # gem 'bcrypt', '~> 3.1.7'                 # Use Active Model has_secure_password
 # gem 'image_processing', '~> 1.2'         # Use Active Storage variant
+gem 'net-imap', require: false
+gem 'net-pop', require: false
+gem 'net-smtp', require: false # Send internet mail via SMTP
 
 group :development, :test do
   gem 'awesome_print'           # makes console output easy to read
