@@ -91,4 +91,7 @@ While building this loop, I chose to output all of the tracks to the console as 
 And this is what it looks like in the GUI when running through the poses:
 ![alt text](/public/screenshots/row_highlighting.gif "playlist running in GUI")
 
+try out the larger one
+![alt text](/public/screenshots/row_highlighting_17.gif "playlist running in GUI")
+
 That's pretty much all there is to it. Some Rails CRUD GUI that supports a single javascript loop.
